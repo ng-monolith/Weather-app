@@ -25,7 +25,7 @@ export class WeatherWidgetComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subscription = interval(10000).subscribe(() => {
-      // this.updateWeatherData();
+      this.updateWeatherData();
     });
 
     this.subscription.add(interval(60000).subscribe(() => {
