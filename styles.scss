@@ -1,0 +1,64 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  background: $gray-background;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+/* --large---------- */
+.opt-container-large-padding {
+  margin: 0 auto;
+  max-width: 1110px;
+  width: 100%;
+  padding: 60px 0; }
+
+@media (min-width: 1025px) and (max-width: 1170px) {
+  .opt-container-large-padding {
+    margin: 0 15px; } }
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .opt-container-large-padding,
+  .opt-container-small-padding {
+    max-width: 720px;
+    padding: 40px 0; } }
+
+@media only screen and (max-width: 767px) {
+  .opt-container-large-padding,
+  .opt-container-small-padding {
+    max-width: 100%;
+    padding: 20px 15px; } }
+
+/* container-large  */
+/* ----large no padding----------------- */
+.opt-container-large {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1110px; }
+
+@media (min-width: 1025px) and (max-width: 1170px) {
+  .opt-container-large {
+    margin: 0 15px; } }
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .opt-container-large,
+  .opt-container-small{
+    max-width: 720px;
+    margin: 0 auto; } }
+
+@media only screen and (max-width: 767px) {
+  .opt-container-large,
+  .opt-container-small {
+    max-width: 100%;
+    padding: 0 15px; } }

@@ -1,0 +1,122 @@
+@import "../../../variables.scss";
+@import "../../../mixins.scss";
+.widget-weather {
+  $self: &;
+  @include flex-column;
+  @include flex-center;
+  gap: 30px;
+  background: $gray-background;
+  padding-inline: 15px;
+  padding-top: 80px;
+  &__title {
+    color: $dark;
+    @include font-v2;
+  }
+  &__container {
+    gap: 20px;
+    @include flex-center;
+    @include not-desktop {
+      flex-direction: column;
+    }
+  }
+  &__card {
+    transition: transform 0.5s ease-out;
+    width: 100%;
+    &__box {
+      @include flex-center;
+      @include flex-column;
+      background: $white-gradient;
+      box-shadow: $box-shadow;
+      border: $gray-border;
+      border-radius: 8px;
+      padding: 30px;
+      max-width: 500px;
+      @include not-desktop {
+        max-width: initial;
+      }
+      width: 100%;
+    }
+    &__icon {
+      @include box(80px);
+    }
+    &__heading {
+      @include font-v3;
+      color: $dark;
+    }
+    &__description {
+      @include font-v4;
+      color: $dark;
+    }
+    &__date {
+      @include font-v5;
+      color: $dark;
+    }
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.03);
+    }
+  }
+  &__details {
+    &__row {
+      display: flex;
+      gap: 10px;
+      @include media-custom-max(576px){
+        display: block;
+      }
+    }
+    &__column {
+      @include flex-column;
+      width: 50%;
+      row-gap: 10px;
+      height: 180px;
+      @include media-custom-max(576px) {
+        width: 100%;
+      }
+    }
+    @include flex-column;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    &__heading {
+      padding-top: 20px;
+      @include font-v4;
+      color: $dark;
+    }
+    &__box {
+      border: $gray-border;
+      column-gap: 10px;
+      display: flex;
+      flex-shrink: 0;
+      padding: 20px;
+      border-radius: 20px;
+      background: $white-gradient;
+      svg {
+        @include box(40px);
+      }
+    }
+    &__wrapper {
+      @include flex-column;
+      justify-content: center;
+    }
+    &__title {
+      @include font-v5;
+      color: $dark;
+    }
+    &__temperature {
+      @include font-v6;
+      color: $dark;
+    }
+    &__wind {
+      @include font-v6;
+      color: $dark;
+    }
+    &__humidity {
+      @include font-v6;
+      color: $dark;
+    }
+    &__pressure {
+      @include font-v6;
+      color: $dark;
+    }
+  }
+}

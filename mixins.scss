@@ -1,0 +1,185 @@
+@import "variables.scss";
+
+@mixin background($bg-size: false, $bg-position: false, $bg-repeat: false) {
+  @if $bg-size {
+    background-size: $bg-size;
+  }
+  @if $bg-position {
+    background-position: $bg-position;
+  }
+  @if $bg-repeat {
+    background-repeat: $bg-repeat;
+  }
+}
+@mixin box($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+@mixin clamp($number) {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-line-clamp: $number;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+}
+@mixin cover-background {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-center-column {
+  @include flex-center;
+  flex-direction: column;
+}
+
+@mixin flex-center-vertical {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-center-horizontal {
+  display: flex;
+  justify-content: center;
+}
+@mixin font-params($font-size, $font-weight: null, $line-height: null, $letter-spacing: null) {
+  @if unit($font-size) == '' {
+    font-size: $font-size * 1px;
+  } @else {
+    font-size: $font-size;
+  }
+
+  @if $font-weight {
+    font-weight: $font-weight;
+  }
+
+  @if $line-height {
+    line-height: $line-height;
+  }
+
+  @if $letter-spacing {
+    letter-spacing: $letter-spacing;
+  }
+}
+@mixin desktop-only {
+  @media only screen and (min-width: $tablet-breakpoint + 1px) {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @media only screen and (min-width: $mobile-breakpoint) and (max-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin mobile-only {
+  @media only screen and (max-width: $mobile-breakpoint - 1px) {
+    @content;
+  }
+}
+
+@mixin not-mobile {
+  @media only screen and (min-width: $mobile-breakpoint) {
+    @content;
+  }
+}
+
+@mixin not-desktop {
+  @media only screen and (max-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin media-custom-max($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin media-custom-min($width) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
+@mixin position($position:false, $top: false, $right: false, $bottom: false, $left: false) {
+  @if $position {
+    position: $position;
+  }
+  @if $top {
+    top: $top;
+  }
+  @if $right {
+    right: $right;
+  }
+  @if $bottom {
+    bottom: $bottom;
+  }
+  @if $left {
+    left: $left;
+  }
+}
+@mixin font-v1 {
+  @include font-params(52px, 500, 1.12, -0.4px);
+  font-family: $poppins-font-family;
+  @include not-desktop {
+    font-size: 35px;
+    letter-spacing: -0.5px;
+  }
+}
+
+@mixin font-v2 {
+  @include font-params(36px, 400, 1.16, -0.2px);
+  font-family: $poppins-font-family;
+  @include not-desktop {
+    font-size: 28px;
+  }
+}
+
+@mixin font-v3 {
+  @include font-params(24px, 400, 1.5, -0.15px);
+  font-family: $poppins-font-family;
+  @include not-desktop {
+    font-size: 20px;
+    line-height: 1.25;
+  }
+}
+@mixin font-v4 {
+  @include font-params(20px, 400, 1.5, -0.15px);
+  font-family: $poppins-font-family;
+  @include not-desktop {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+@mixin font-v5 {
+  @include font-params(14px, 300, 1.5, -0.15px);
+  font-family: $poppins-font-family;
+  @include not-desktop {
+    font-size: 12px;
+    line-height: 1.25;
+  }
+}
+@mixin font-v6 {
+  @include font-params(16px, 500, 1.5, -0.15px);
+  font-family: $poppins-font-family;
+  @include not-desktop {
+    font-size: 14px;
+    line-height: 1.25;
+  }
+}

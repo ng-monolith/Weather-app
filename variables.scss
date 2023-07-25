@@ -1,0 +1,18 @@
+$container-max-width-small: 600px;
+$container-max-width-large: 1110px;
+
+// Device breakpoints
+$mobile-breakpoint: 768px;
+$tablet-breakpoint: 1024px;
+
+$poppins-font-family: 'Poppins', sans-serif;
+
+$white-color: #ffffff;
+$black-color: #000000;
+$gray: #cccccc;
+$dark: #363B64;
+$blue-gradient: linear-gradient(180deg, #3C6FD1 0%, #3C6FD1 0.01%, #7CA9FF 100%);
+$white-gradient: linear-gradient(227deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%);
+$gray-background: #E8E8E8;
+$gray-border: 1px solid $gray;
+$box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;

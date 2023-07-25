@@ -1,0 +1,89 @@
+@import "../../../variables.scss";
+@import "../../../mixins.scss";
+
+.splash-component {
+  background: $blue-gradient;
+  height: 100%;
+  padding-inline: 15px;
+  @include flex-center;
+  &__content {
+    @include flex-column;
+    text-align: center;
+  }
+  &__icon {
+    @include box(150px, 150px);
+    animation: moveUpDown 2s ease-in-out infinite;
+    margin: 0 auto;
+  }
+  &__loading {
+    margin: 0 auto;
+    display: inline-block;
+    position: relative;
+    @include box(80px);
+    div {
+      @include position(absolute, 30px);
+      @include box(13px, 13px);
+      animation-timing-function: cubic-bezier(0, 1, 1, 0);
+      border-radius: 50%;
+      background: $white-color;
+      &:nth-child(1) {
+        animation: splash-component__loading1 0.6s infinite;
+        left: 8px;
+      }
+      &:nth-child(2) {
+        animation: splash-component__loading2 0.6s infinite;
+        left: 8px;
+      }
+      &:nth-child(3) {
+        animation: splash-component__loading2 0.6s infinite;
+        left: 32px;
+      }
+      &:nth-child(4) {
+        animation: splash-component__loading3 0.6s infinite;
+        left: 56px;
+      }
+    }
+  }
+  &__heading {
+    @include font-v1;
+    color: $white-color;
+    padding-bottom: 10px;
+  }
+  &__description {
+    @include font-v4;
+    color: $white-color;
+  }
+}
+
+@keyframes moveUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes splash-component__loading1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes splash-component__loading2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+@keyframes splash-component__loading3 {
+0% {
+    transform: scale(1);
+  }
+100% {
+    transform: scale(0);
+  }
+}
